@@ -1,0 +1,9 @@
+.DS_Store
+.idea
+.tinypng-sigs
+.vscode
+node_modules
+package-lock.json
+.cache/
+/docs
+*.log
