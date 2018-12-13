@@ -34,3 +34,70 @@ let x: [string, number];
 x = ["hello", 10]; // OK
 x = [10, "hello"]; // Error
 ```
+6.枚举类型 enmu,它可以友好的为一组数字定义名称
+```js
+//如果不给于赋值的话，那么默认将会以0,1,2以此类推
+enum Color {Red, Green, Blue}
+let c: Color = Color.Green;
+//如果给其中的一个赋值，后面的不赋值那么后面的会以此类推，前面的将会从0开始
+enum Color {Red, Yellow, Green = 4, Blue}
+//c=2
+let c: Color = Color.Yellow;
+//c=5
+c = Color.Blue;
+```
+7.任意类型 Any，很多时候我们不知道一个数据他的类型的时候，那么久可以使用any
+```js
+let a: any;
+a = true;//ok
+a = 6;//ok
+a = "some string";//ok
+```
+虽然你可以为他们赋任何值，但是你却不能随意调用任何方法，代码不会报错，但是编译会挂掉，如：
+```js
+let a: any;
+a = "6";
+a.toFixed();//代码校验不会报错，但是编译会报错
+```
+你也可以为数据定义any类型
+```js
+let ar : any[];
+ar = [6,"string",{name:"xuke"}];
+```
+8.空类型 void，一般用作函数的返回值
+```js
+const fn = (): void=>{}
+```
+9.never 类型，用于函数永远返回异常
+```js
+const fn = (): never => {
+      throw new Error('message')
+}
+```
+10.object 类型，用来表述引用类型
+```js
+declare function create(o: object | null): void;
+
+create({ prop: 0 }); // OK
+create(null); // OK
+
+create(42); // Error
+create("string"); // Error
+create(false); // Error
+create(undefined); // Error
+
+```
+11.类型断言，当你明确的知道某个数据类型的时候，可以使用类型断言，它有两种表现形式：
+
+第一种：
+```js
+let someValue: any = "this is a string";
+
+let strLength: number = (<string>someValue).length;
+```
+第二种：
+```js
+let someValue: any = "this is a string";
+
+let strLength: number = (someValue as string).length;
+```
