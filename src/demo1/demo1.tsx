@@ -12,6 +12,7 @@ export default class Demo1 extends React.Component<BasicTypeProps, BasicTypeStat
             binary: 0b1010,//二进制
             octal: 0o744//八进制
         }
+
     }
 
     render() {
