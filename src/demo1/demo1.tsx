@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {BasicTypeProps, BasicTypeStates} from './index';
+import {PopUpInfo} from './webcomponent';
 
 
 enum Color {Red, Yellow, Green = 4, Blue}
@@ -12,13 +13,16 @@ export default class Demo1 extends React.Component<BasicTypeProps, BasicTypeStat
             binary: 0b1010,//二进制
             octal: 0o744//八进制
         }
-
     }
 
+    componentDidMount() {
+        customElements.define('x-search', PopUpInfo);
+    }
+
+
     render() {
-        let c: Color = Color.Yellow;
-        console.log(c);
-        const {state: {hexadecimal, binary, octal}} = this;
-        return <div>16进制:{hexadecimal},8进制:{octal},2进制:{hexadecimal}</div>
+        return <div>
+            <x-search></x-search>
+        </div>
     }
 }

@@ -14,6 +14,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
+var webcomponent_1 = require("./webcomponent");
 var Color;
 (function (Color) {
     Color[Color["Red"] = 0] = "Red";
@@ -32,17 +33,12 @@ var Demo1 = /** @class */ (function (_super) {
         };
         return _this;
     }
+    Demo1.prototype.componentDidMount = function () {
+        customElements.define('x-search', webcomponent_1.PopUpInfo);
+    };
     Demo1.prototype.render = function () {
-        var c = Color.Yellow;
-        console.log(c);
-        var _a = this.state, hexadecimal = _a.hexadecimal, binary = _a.binary, octal = _a.octal;
         return React.createElement("div", null,
-            "16\u8FDB\u5236:",
-            hexadecimal,
-            ",8\u8FDB\u5236:",
-            octal,
-            ",2\u8FDB\u5236:",
-            hexadecimal);
+            React.createElement("x-search", null));
     };
     return Demo1;
 }(React.Component));
