@@ -34,7 +34,7 @@ var Demo1 = /** @class */ (function (_super) {
         return _this;
     }
     Demo1.prototype.componentDidMount = function () {
-        customElements.define('x-search', webcomponent_1.PopUpInfo);
+        customElements.define('x-search', webcomponent_1.webComponentsForES5);
     };
     Demo1.prototype.render = function () {
         return React.createElement("div", null,
