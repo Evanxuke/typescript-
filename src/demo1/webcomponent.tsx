@@ -12,6 +12,11 @@ export class MyContainer extends HTMLElement {
         });
     }
 
+    renderButton() {
+        this.attachShadow({mode: 'open'}).innerHTML = `<button color="blue" is="my-button">Test</button>`;
+
+    }
+
     renderButton(): JSX.Element {
         return <button color="blue" is="my-button">Test</button>;
     }

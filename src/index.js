@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Demo1 from "./demo1/demo1";
+
+import router from './router/routes';
 
 ReactDOM.render(
-    <Demo1/>,
+    router,
     document.getElementById("example")
 );
