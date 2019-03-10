@@ -27,6 +27,9 @@ var MyContainer = /** @class */ (function (_super) {
         return _this;
     }
     MyContainer.prototype.renderButton = function () {
+        this.attachShadow({ mode: 'open' }).innerHTML = "<button color=\"blue\" is=\"my-button\">Test</button>";
+    };
+    MyContainer.prototype.renderButton = function () {
         return React.createElement("button", { color: "blue", is: "my-button" }, "Test");
     };
     return MyContainer;

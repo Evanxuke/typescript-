@@ -11,7 +11,6 @@ export default class Demo1 extends React.Component<any, any> {
         customElements.define('my-container', MyContainer);
     }
 
-
     render() {
         return <div>
             <my-container></my-container>
