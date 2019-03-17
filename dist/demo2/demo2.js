@@ -14,18 +14,16 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
-require("./webcomponent");
-var Demo1 = /** @class */ (function (_super) {
-    __extends(Demo1, _super);
-    function Demo1(props) {
+require("./webcomponent.js");
+var Demo2 = /** @class */ (function (_super) {
+    __extends(Demo2, _super);
+    function Demo2(props) {
         return _super.call(this, props) || this;
     }
-    Demo1.prototype.componentDidMount = function () {
-    };
-    Demo1.prototype.render = function () {
+    Demo2.prototype.render = function () {
         return React.createElement("div", null,
-            React.createElement("my-container", null));
+            React.createElement("my-container1", null));
     };
-    return Demo1;
+    return Demo2;
 }(React.Component));
-exports.default = Demo1;
+exports.default = Demo2;

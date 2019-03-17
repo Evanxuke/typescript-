@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {MyContainer} from './webcomponent';
+import './webcomponent';
 
 
 export default class Demo1 extends React.Component<any, any> {
@@ -8,7 +8,7 @@ export default class Demo1 extends React.Component<any, any> {
     }
 
     componentDidMount() {
-        customElements.define('my-container', MyContainer);
+
     }
 
     render() {

@@ -14,16 +14,21 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 require("document-register-element");
+var template_1 = require("./template");
 var MyContainer = /** @class */ (function (_super) {
     __extends(MyContainer, _super);
     function MyContainer() {
-        var _this = _super.call(this) || this;
-        var wrapper = document.createElement('span');
-        wrapper.innerHTML = 'hello world!';
-        var shadom = _this.attachShadow({ mode: 'open' }); //closed切换变为只读
-        shadom.appendChild(wrapper);
-        return _this;
+        return _super.call(this) || this;
     }
+    MyContainer.prototype.componentDidMount = function () {
+        var t = document.getElementsByTagName('text');
+        var cloneDom = document.importNode(t.content, true);
+        var shadom = this.attachShadow({ mode: 'open' });
+        shadom.appendChild(cloneDom);
+    };
+    MyContainer.prototype.render = function () {
+        return React.createElement(template_1.default, null);
+    };
     return MyContainer;
 }(HTMLElement));
 exports.MyContainer = MyContainer;

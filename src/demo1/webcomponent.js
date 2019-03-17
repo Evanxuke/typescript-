@@ -1,6 +1,6 @@
-import 'document-register-element';
+//import 'document-register-element';
 
-export class MyContainer extends HTMLElement {
+class MyContainer extends HTMLElement {
     constructor() {
         super();
         let wrapper = document.createElement('span');
@@ -9,3 +9,5 @@ export class MyContainer extends HTMLElement {
         shadom.appendChild(wrapper);
     }
 }
+
+customElements.define('my-container', MyContainer);

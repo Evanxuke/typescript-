@@ -42,7 +42,21 @@ module.exports = {
             {test: /\.js|.tsx|.ts?$/, exclude: /node_modules|plugins/, loader: ["babel-loader"]},
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
             {enforce: "pre", test: /\.js$/, loader: "source-map-loader"},
-            {test: /\.html$/, loader: 'html-loader'}
+            {test: /\.html$/, loader: 'html-loader'},
+            {
+                test: /\.less$/,
+                use: [
+                    {
+                        loader: 'style-loader'
+                    },
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: true
+                        }
+                    }
+                ]
+            }
         ]
     },
     externals: {
