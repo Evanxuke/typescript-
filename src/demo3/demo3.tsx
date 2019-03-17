@@ -2,7 +2,7 @@ import * as React from 'react';
 import './webcomponent.js';
 
 
-export default class Demo2 extends React.Component<any, any> {
+export default class Demo3 extends React.Component<any, any> {
     constructor(props) {
         super(props);
     }

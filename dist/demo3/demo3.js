@@ -15,16 +15,19 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 require("./webcomponent.js");
-require("./demo2.less");
-var Demo2 = /** @class */ (function (_super) {
-    __extends(Demo2, _super);
-    function Demo2(props) {
+var Demo3 = /** @class */ (function (_super) {
+    __extends(Demo3, _super);
+    function Demo3(props) {
         return _super.call(this, props) || this;
     }
-    Demo2.prototype.render = function () {
+    Demo3.prototype.render = function () {
         return React.createElement("div", null,
-            React.createElement("my-container1", null));
+            React.createElement("my-container2", null,
+                React.createElement("span", { slot: "my-text" }, "Let's have some different text!"),
+                React.createElement("ul", { slot: "my-ul" },
+                    React.createElement("li", null, "Let's have some different text!"),
+                    React.createElement("li", null, "In a list!"))));
     };
-    return Demo2;
+    return Demo3;
 }(React.Component));
-exports.default = Demo2;
+exports.default = Demo3;
