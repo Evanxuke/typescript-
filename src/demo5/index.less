@@ -1,0 +1,28 @@
+p {
+  background: yellow;
+}
+
+my-container4 {
+  background: cyan;
+}
+
+:defined {
+  font-style: italic;
+}
+
+:host {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 2px 5px;
+}
+
+div {
+  font-size: 14px;
+}
+
+my-container4:not(:defined) {
+  display: none;
+}
+
+my-container4:defined {
+  display: block;
+}
